@@ -48,6 +48,10 @@ Then the bot will trigger the following keystrokes: wwwwwwwwwwssswwwww, which is
 
 ## Running the bot
 
-To run the bot, simply use python, but remember that you must have sudo powers in Linux (because of the keyboard module)
+To run the bot, simply use python, like so, but remember that you must have sudo powers in Linux (because of the keyboard module):
+
+```sh
+python bot.py
+```
 
 **Note:** If you're inside a virtual environment, run `which python` to see what your path to python is and use sudo to run that. 
