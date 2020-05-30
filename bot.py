@@ -4,6 +4,12 @@ import asyncio
 import keyboard
 import json
 
+def load_json(filename):
+    with open(filename, 'r') as f:
+        data = json.load(f)
+
+    return data
+
 async def command_handler(message):
     # Skip prefix character
     content = message.content[1:]
@@ -30,17 +36,18 @@ async def command_handler(message):
         # Wait delay amount of seconds
         await asyncio.sleep(delay)
 
-def load_json(filename):
-    with open(filename, 'r') as f:
-        data = json.load(f)
+class Bot(Keyword):
+    def __init__(self):
+        super().__init__()
 
-    return data
+    async def event_ready(self):
+        print(f'Ready')
 
 if __name__ == "__main__":
     global cfg
     cfg = load_json('config.json')
 
-    bot = Keyword()
+    bot = Bot()
 
     bot.prefix_keywords = {
         "!": command_handler
