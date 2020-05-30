@@ -5,12 +5,14 @@ import keyboard
 import json
 
 def load_json(filename):
+    """Reads json file into dictionary"""
     with open(filename, 'r') as f:
         data = json.load(f)
 
     return data
 
 async def command_handler(message):
+    """Handles keystroke commands from twitch chat."""
     # Skip prefix character
     content = message.content[1:]
     args = content.split()
@@ -25,7 +27,7 @@ async def command_handler(message):
         if arg in controls:
             keystrokes.append(controls[arg])
 
-        elif arg.isnumeric() and len(keystrokes) > 0:
+        elif arg.isnumeric() and int(arg) <= int(options['max']) and len(keystrokes) > 0:
             for _ in range(int(arg) - 1):
                 # append the last one again
                 keystrokes.append(keystrokes[-1])

@@ -8,6 +8,7 @@
         "b": "z"
     },
     "options":{
-        "delay": 0.25
+        "delay": 0.25,
+        "max": 10
     }
 }
