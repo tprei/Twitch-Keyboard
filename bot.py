@@ -28,7 +28,7 @@ async def command_handler(message):
         keyboard.write(key)
 
         # Wait delay amount of seconds
-        asyncio.sleep(delay)
+        await asyncio.sleep(delay)
 
 def load_json(filename):
     with open(filename, 'r') as f:
