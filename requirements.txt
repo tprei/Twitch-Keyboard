@@ -30,5 +30,5 @@ twitchio==1.1.0
 twitchkeywords==1.0
 urllib3==1.25.9
 webencodings==0.5.1
-websockets==8.1
+websockets==9.1
 yarl==1.4.2
